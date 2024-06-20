@@ -1,0 +1,23 @@
+<html>
+<body>
+<button id="movingButton">Move Me!</button>
+<script>
+let left = 0;
+let top1 = 0;
+
+function moveButton() {
+    left += 10;
+    top1 += 10;
+    let button = document.getElementById('movingButton');
+    button.style.position = 'absolute';
+    button.style.left = left + 'px';
+    button.style.top = top1 + 'px';
+    if (left < window.innerWidth - button.offsetWidth && top1 < window.innerHeight - button.offsetHeight) {
+        setTimeout(moveButton, 1000); // 每秒移動一次
+    }
+}
+
+moveButton();
+</script>
+</body>
+</html>
