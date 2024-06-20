@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-areas: 
+                "header header header"
+                "left main right";
+            height: 100vh;
+        }
+        header {
+            grid-area: header;
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .sidebar {
+            background-color: #f4f4f4;
+            padding: 1rem;
+        }
+        .left {
+            grid-area: left;
+        }
+        .right {
+            grid-area: right;
+        }
+        main {
+            grid-area: main;
+            background-color: #fff;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div>Logo</div>
+            <div>
+                <img src="icon1.png" alt="Icon 1" style="width: 24px; height: 24px;">
+                <img src="icon2.png" alt="Icon 2" style="width: 24px; height: 24px;">
+                <img src="icon3.png" alt="Icon 3" style="width: 24px; height: 24px;">
+            </div>
+        </header>
+        <div class="sidebar left">
+            左側邊欄
+        </div>
+        <main>
+            主要內容區
+        </main>
+        <div class="sidebar right">
+            右側邊欄
+        </div>
+    </div>
+</body>
+</html>
